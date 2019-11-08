@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <Date>2019-11-07</Date>
+  <Beta>False</Beta>
+  <Category>MediaApp:Games</Category>
+  <Name>Minecraft Bedrock Dedicated Server</Name>
+  <Project>http://minecraft.net/</Project>
+  <Changes>
+[center][img width='155px' src='https://d2631fvi2jdnb6.cloudfront.net/docker/limetech.png'][/center]
+
+[center][font size=4]Minecraft Bedrock Dedicated Server Change Log[/font][/center]
+
+[font size=3]2019.11.07[/font]
+- Initial Release
+  </Changes>
+  <Overview>
+    Play Minecraft!
+  </Overview>
+  <Description>
+    The Plex Media Server enriches your life by organizing all your personal media, presenting it beautifully and streaming it to all of your devices. It's easy to use, it's awesome, and it's free![br][br]
+    [b][span style='color: #E80000;']Directions:[/span][/b][br]
+    [b]/config[/b] : this is where PMS will store it's databases and configuration.[br][br]
+    [b]Tip:[/b] You can add more volume mappings if you wish PMS has access to it.
+  </Description>
+  <Registry>https://registry.hub.docker.com/u/itzg/minecraft-bedrock-server/</Registry>
+  <GitHub>https://github.com/itzg/docker-minecraft-bedrock-server</GitHub>
+  <Repository>itzg/minecraft-bedrock-server</Repository>
+  <Support>https://forums.unraid.net/topic/38974-support-limetechs-docker-repository/</Support>
+  <BindTime>true</BindTime>
+  <Privileged>true</Privileged>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Environment/>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/PlexMediaServer</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:32400]/web/index.html</WebUI>
+  <Banner></Banner>
+  <Icon>https://d2631fvi2jdnb6.cloudfront.net/docker/limetech/plex.png</Icon>
+</Containers>
