@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Containers>
+<TemplateURL>https://raw.githubusercontent.com/vogles/UnraidDockerTemplates/master/vogles/MinecraftBedrock.xml</TemplateURL>
   <Date>2019-11-07</Date>
   <Beta>False</Beta>
-  <Category>MediaApp:Games</Category>
-  <Name>Minecraft Bedrock Dedicated Server</Name>
-  <Project>http://minecraft.net/</Project>
+  <Category>GameServers</Category>
+  <Name>vogles-minecraftbedrockdedicatedserver</Name>
+  <Project>https://www.minecraft.net/en-us/download/server/bedrock</Project>
   <Changes>
 [center][img width='155px' src='https://d2631fvi2jdnb6.cloudfront.net/docker/limetech.png'][/center]
 
@@ -14,17 +15,19 @@
 - Initial Release
   </Changes>
   <Overview>
-    Play Minecraft!
+    Minecraft is a sandbox video game created by Swedish game developer Markus Persson and released by Mojang in 2011. The game allows players to build with a variety of different blocks in a 3D procedurally generated world, requiring creativity from players. Other activities in the game include exploration, resource gathering, crafting, and combat. Multiple game modes that change gameplay are available, including—but not limited to—a survival mode, in which players must acquire resources to build the world and maintain health, and a creative mode, where players have unlimited resources to build with.
   </Overview>
   <Description>
-    The Plex Media Server enriches your life by organizing all your personal media, presenting it beautifully and streaming it to all of your devices. It's easy to use, it's awesome, and it's free![br][br]
-    [b][span style='color: #E80000;']Directions:[/span][/b][br]
-    [b]/config[/b] : this is where PMS will store it's databases and configuration.[br][br]
-    [b]Tip:[/b] You can add more volume mappings if you wish PMS has access to it.
+    [b][u][span style='color: #E80000;']Description[/span][/u][/b][br]
+    Minecraft is a sandbox video game created by Swedish game developer Markus Persson and released by Mojang in 2011. The game allows players to build with a variety of different blocks in a 3D procedurally generated world, requiring creativity from players. Other activities in the game include exploration, resource gathering, crafting, and combat. Multiple game modes that change gameplay are available, including—but not limited to—a survival mode, in which players must acquire resources to build the world and maintain health, and a creative mode, where players have unlimited resources to build with.[br][br]
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+    [b]/config[/b] This is where Minecraft will store it's configuration file, database and logs.[br][br]
+    [b][u][span style='color: #E80000;']Documentation[/span][/u][/b][br]
+    https://github.com/binhex/documentation[br][br]
   </Description>
   <Registry>https://registry.hub.docker.com/u/itzg/minecraft-bedrock-server/</Registry>
   <GitHub>https://github.com/itzg/docker-minecraft-bedrock-server</GitHub>
-  <Repository>itzg/minecraft-bedrock-server</Repository>
+  <Repository>itzg/docker-minecraft-bedrock-server</Repository>
   <Support>https://forums.unraid.net/topic/38974-support-limetechs-docker-repository/</Support>
   <BindTime>true</BindTime>
   <Privileged>true</Privileged>
@@ -35,12 +38,12 @@
   <Environment/>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/PlexMediaServer</HostDir>
+      <HostDir>/mnt/user/appdata/MinecraftBedrockDedicated</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
   <WebUI>http://[IP]:[PORT:32400]/web/index.html</WebUI>
   <Banner></Banner>
-  <Icon>https://d2631fvi2jdnb6.cloudfront.net/docker/limetech/plex.png</Icon>
+  <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/minecraftbedrockserver-icon.png</Icon>
 </Containers>
