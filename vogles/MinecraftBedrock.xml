@@ -18,7 +18,7 @@
   </Description>
   <Registry>https://registry.hub.docker.com/u/vogles/minecraft-bedrock-server/</Registry>
   <GitHub>https://github.com/vogles/minecraftbedrockserverdocker</GitHub>
-  <Repository>vogles/minecraftbedrockserverdocker</Repository>
+  <Repository>vogles/minecraft-bedrock-server</Repository>
   <Project>https://www.minecraft.net/en-us/download/server/bedrock</Project>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
