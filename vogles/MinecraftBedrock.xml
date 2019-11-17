@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Containers>
-<TemplateURL>https://raw.githubusercontent.com/vogles/UnraidDockerTemplates/master/vogles/MinecraftBedrock.xml</TemplateURL>
-  <Date>2019-11-07</Date>
+  <TemplateURL>https://raw.githubusercontent.com/vogles/UnraidDockerTemplates/master/vogles/MinecraftBedrock.xml</TemplateURL>
   <Beta>False</Beta>
   <Category>GameServers</Category>
-  <Name>vogles-minecraftbedrockdedicatedserver</Name>
+  <Name>vogles-minecraftbedrockserverdocker</Name>
   <Project>https://www.minecraft.net/en-us/download/server/bedrock</Project>
-  <Changes>
-[center][img width='155px' src='https://d2631fvi2jdnb6.cloudfront.net/docker/limetech.png'][/center]
-
-[center][font size=4]Minecraft Bedrock Dedicated Server Change Log[/font][/center]
-
-[font size=3]2019.11.07[/font]
-- Initial Release
-  </Changes>
   <Overview>
     Minecraft is a sandbox video game created by Swedish game developer Markus Persson and released by Mojang in 2011. The game allows players to build with a variety of different blocks in a 3D procedurally generated world, requiring creativity from players. Other activities in the game include exploration, resource gathering, crafting, and combat. Multiple game modes that change gameplay are available, including—but not limited to—a survival mode, in which players must acquire resources to build the world and maintain health, and a creative mode, where players have unlimited resources to build with.
   </Overview>
@@ -25,25 +16,64 @@
     [b][u][span style='color: #E80000;']Documentation[/span][/u][/b][br]
     https://github.com/binhex/documentation[br][br]
   </Description>
-  <Registry>https://registry.hub.docker.com/u/itzg/minecraft-bedrock-server/</Registry>
-  <GitHub>https://github.com/itzg/docker-minecraft-bedrock-server</GitHub>
-  <Repository>itzg/docker-minecraft-bedrock-server</Repository>
-  <Support>https://forums.unraid.net/topic/38974-support-limetechs-docker-repository/</Support>
+  <Registry>https://registry.hub.docker.com/u/vogles/minecraft-bedrock-server/</Registry>
+  <GitHub>https://github.com/vogles/MinecraftBedrockServerDocker</GitHub>
+  <Repository>vogles/MinecraftBedrockServerDocker</Repository>
+  <Project>https://www.minecraft.net/en-us/download/server/bedrock</Project>
   <BindTime>true</BindTime>
-  <Privileged>true</Privileged>
+  <Privileged>false</Privileged>
   <Networking>
-    <Mode>host</Mode>
-    <Publish/>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>19132</HostPort>
+        <ContainerPort>19132</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>19132</HostPort>
+        <ContainerPort>19132</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>19133</HostPort>
+        <ContainerPort>19133</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>19133</HostPort>
+        <ContainerPort>19133</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
   </Networking>
-  <Environment/>
+  <Environment>
+    <Variable>
+      <Name>EULA</Name>
+      <Value>true</Value>
+    </Variable>
+    <Variable>
+      <Name>VERSION</Name>
+      <Value>latest</Value>
+    </Variable>
+  </Environment>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/MinecraftBedrockDedicated</HostDir>
-      <ContainerDir>/config</ContainerDir>
+      <HostDir>/mnt/user/appdata/minecraftbedrockserverdocker/config</HostDir>
+      <ContainerDir>/minecraft/server/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/minecraftbedrockserverdocker/worlds</HostDir>
+      <ContainerDir>/minecraft/server/worlds</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/minecraftbedrockserverdocker/backups</HostDir>
+      <ContainerDir>/minecraft/server/backups</ContainerDir>
+      <Mode>r</Mode>
+    </Volume>
   </Data>
-  <WebUI>http://[IP]:[PORT:32400]/web/index.html</WebUI>
-  <Banner></Banner>
+  <Banner/>
   <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/minecraftbedrockserver-icon.png</Icon>
 </Containers>
