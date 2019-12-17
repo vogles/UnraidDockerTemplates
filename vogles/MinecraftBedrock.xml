@@ -24,7 +24,13 @@
   <Privileged>false</Privileged>
   <Networking>
     <Mode>bridge</Mode>
-    <Publish/>
+    <Publish>
+      <Port>
+        <HostPort>19132</HostPort>
+        <ContainerPort>19132</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
   </Networking>
   <Environment>
     <Variable>
