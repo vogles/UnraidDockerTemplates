@@ -30,6 +30,11 @@
         <ContainerPort>19132</ContainerPort>
         <Protocol>udp</Protocol>
       </Port>
+      <Port>
+        <HostPort>19133</HostPort>
+        <ContainerPort>19133</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
     </Publish>
   </Networking>
   <Environment>
